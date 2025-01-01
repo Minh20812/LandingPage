@@ -11,11 +11,26 @@ const MainRouter = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<TravelLanding />} />
-        <Route path="/home" element={<TravelLanding />} />
-        <Route path="/destinations" element={<DestinationsPage />} />
-        <Route path="/tours" element={<Tours />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="https://landing-page-ruddy-five-59.vercel.app/home"
+          element={<TravelLanding />}
+        />
+        <Route
+          path="https://landing-page-ruddy-five-59.vercel.app//destinations"
+          element={<DestinationsPage />}
+        />
+        <Route
+          path="https://landing-page-ruddy-five-59.vercel.app//tours"
+          element={<Tours />}
+        />
+        <Route
+          path="https://landing-page-ruddy-five-59.vercel.app//about"
+          element={<About />}
+        />
+        <Route
+          path="https://landing-page-ruddy-five-59.vercel.app//contact"
+          element={<Contact />}
+        />
       </Routes>
     </BrowserRouter>
   );
