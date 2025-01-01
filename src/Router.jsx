@@ -16,19 +16,19 @@ const MainRouter = () => {
           element={<TravelLanding />}
         />
         <Route
-          path="https://landing-page-ruddy-five-59.vercel.app//destinations"
+          path="https://landing-page-ruddy-five-59.vercel.app/destinations"
           element={<DestinationsPage />}
         />
         <Route
-          path="https://landing-page-ruddy-five-59.vercel.app//tours"
+          path="https://landing-page-ruddy-five-59.vercel.app/tours"
           element={<Tours />}
         />
         <Route
-          path="https://landing-page-ruddy-five-59.vercel.app//about"
+          path="https://landing-page-ruddy-five-59.vercel.app/about"
           element={<About />}
         />
         <Route
-          path="https://landing-page-ruddy-five-59.vercel.app//contact"
+          path="https://landing-page-ruddy-five-59.vercel.app/contact"
           element={<Contact />}
         />
       </Routes>
