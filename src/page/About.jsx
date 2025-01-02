@@ -79,7 +79,7 @@ const AboutPage = () => {
             className="w-full h-full object-cover brightness-50"
           />
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white p-2 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Crafting Unforgettable Travel Experiences
           </h1>
