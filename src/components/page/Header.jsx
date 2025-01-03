@@ -1,56 +1,132 @@
-import React, { useState } from "react";
-import { Plane, Menu, X } from "lucide-react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  Globe,
+  Menu,
+  MapPin,
+  Phone,
+  Search,
+  Users,
+  Plane,
+  Contact,
+} from "lucide-react";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header className="px-4 lg:px-6 h-16 fixed top-0 w-full flex items-center border-b justify-between bg-white z-50 shadow">
+      {/* Logo */}
       <Link className="flex items-center justify-center" to="/">
         <Plane className="h-6 w-6" />
         <span className="ml-2 text-xl font-bold">TravelEasy</span>
       </Link>
 
-      <button
-        className="text-gray-800 lg:hidden"
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-        aria-label="Toggle navigation"
-      >
-        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
-
       {/* Mobile Menu */}
-      <nav
-        className={`fixed top-0 left-0 z-50 w-full h-full bg-white transition-transform duration-300 ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:hidden`}
-      >
-        <div className="flex justify-between items-center px-4 py-4 border-b">
-          <Link to="#" className="flex items-center gap-2">
-            <Plane className="h-6 w-6" />
-            <span className="text-xl font-bold text-gray-800">TravelEasy</span>
-          </Link>
-          <button
-            className="text-gray-800"
-            onClick={() => setIsMenuOpen(false)}
-            aria-label="Close navigation"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-        <ul className="mt-8 space-y-6 px-6">
-          {["Home", "Destinations", "Tours", "About", "Contact"].map((item) => (
-            <li key={item}>
-              <Link
-                to={`${item.toLowerCase()}`}
-                className="block text-lg font-medium text-gray-700 hover:text-primary-600"
-              >
-                {item}
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" className="lg:hidden">
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Toggle menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+          <SheetHeader>
+            <SheetTitle className="text-left">
+              <Link to="/" className="flex items-center gap-2">
+                <Plane className="h-6 w-6" />
+                <span className="text-xl font-bold text-gray-800">
+                  TravelEasy
+                </span>
               </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+            </SheetTitle>
+          </SheetHeader>
+          <div className="mt-8 flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Discover
+              </h3>
+              <div className="flex flex-col gap-2">
+                <SheetClose asChild>
+                  <Link
+                    to="/destinations"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-primary-600"
+                  >
+                    <Globe className="h-4 w-4" />
+                    Destinations
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    to="/tours"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-primary-600"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    Tours
+                  </Link>
+                </SheetClose>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Search
+              </h3>
+              <div className="flex flex-col gap-2">
+                <SheetClose asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-primary-600"
+                  >
+                    <Search className="h-4 w-4" />
+                    Find Trips
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-primary-600"
+                  >
+                    <Users className="h-4 w-4" />
+                    Travel Preferences
+                  </Link>
+                </SheetClose>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Support
+              </h3>
+              <div className="flex flex-col gap-2">
+                <SheetClose asChild>
+                  <Link
+                    to="/about"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-primary-600"
+                  >
+                    <Contact className="h-4 w-4" />
+                    About Us
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    to="/contact"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-primary-600"
+                  >
+                    <Phone className="h-4 w-4" />
+                    Contact Us
+                  </Link>
+                </SheetClose>
+              </div>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
 
       {/* Desktop Menu */}
       <nav className="hidden lg:flex gap-6 px-4 py-4">
