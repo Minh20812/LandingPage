@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Plane, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header className="px-4 lg:px-6 h-16 fixed top-0 w-full flex items-center border-b justify-between bg-white z-50 shadow">
-      <a className="flex items-center justify-center" href="/">
+      <Link className="flex items-center justify-center" to="/">
         <Plane className="h-6 w-6" />
         <span className="ml-2 text-xl font-bold">TravelEasy</span>
-      </a>
+      </Link>
 
       <button
         className="text-gray-800 lg:hidden"
@@ -25,10 +26,10 @@ const Header = () => {
         } lg:hidden`}
       >
         <div className="flex justify-between items-center px-4 py-4 border-b">
-          <a href="#" className="flex items-center gap-2">
+          <Link to="#" className="flex items-center gap-2">
             <Plane className="h-6 w-6" />
             <span className="text-xl font-bold text-gray-800">TravelEasy</span>
-          </a>
+          </Link>
           <button
             className="text-gray-800"
             onClick={() => setIsMenuOpen(false)}
@@ -40,12 +41,12 @@ const Header = () => {
         <ul className="mt-8 space-y-6 px-6">
           {["Home", "Destinations", "Tours", "About", "Contact"].map((item) => (
             <li key={item}>
-              <a
-                href={`${item.toLowerCase()}`}
+              <Link
+                to={`${item.toLowerCase()}`}
                 className="block text-lg font-medium text-gray-700 hover:text-primary-600"
               >
                 {item}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -54,13 +55,13 @@ const Header = () => {
       {/* Desktop Menu */}
       <nav className="hidden lg:flex gap-6 px-4 py-4">
         {["Home", "Destinations", "Tours", "About", "Contact"].map((item) => (
-          <a
+          <Link
             key={item}
-            href={`${item.toLowerCase()}`}
+            to={`${item.toLowerCase()}`}
             className="text-sm font-medium text-gray-700 hover:underline underline-offset-4"
           >
             {item}
-          </a>
+          </Link>
         ))}
       </nav>
     </header>

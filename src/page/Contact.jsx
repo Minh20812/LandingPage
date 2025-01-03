@@ -134,7 +134,7 @@ const ContactPage = () => {
               </p>
             </div>
 
-            <div className="lg:flex lg:flex-col gap-8 justify-between grid grid-cols-2">
+            <div className="lg:flex lg:flex-col gap-10 justify-between grid grid-cols-2">
               <ContactInfo
                 icon={<MapPin className="h-6 w-6" />}
                 title="Visit Us"

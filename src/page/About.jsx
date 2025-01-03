@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe2, Users, Award, Heart, MapPin, Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const StatsCard = ({ icon, value, label }) => {
   return (
@@ -143,7 +144,7 @@ const AboutPage = () => {
               </div>
               <div className="mt-8">
                 <Button asChild>
-                  <a href="/contact">Get in Touch</a>
+                  <Link to="/contact">Get in Touch</Link>
                 </Button>
               </div>
             </div>
@@ -251,10 +252,10 @@ const AboutPage = () => {
             </p>
             <div className="mt-8 flex gap-4">
               <Button size="lg" asChild>
-                <a href="/contact">Contact Us</a>
+                <Link to="/contact">Contact Us</Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-white" asChild>
-                <a href="/tours">View Tours</a>
+                <Link to="/tours">View Tours</Link>
               </Button>
             </div>
           </div>
