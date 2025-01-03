@@ -36,7 +36,7 @@ const TravelLanding = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white">
+          <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white p-4">
             <h1 className="text-4xl font-bold mb-4 text-center">
               Explore the World with TravelEasy
             </h1>
