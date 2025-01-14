@@ -26,7 +26,10 @@ const Header = () => {
       {/* Logo */}
       <Link className="flex items-center justify-center" to="/">
         <Plane className="h-6 w-6" />
-        <span className="ml-2 text-xl font-bold">TravelEasy</span>
+        <div className="motion-preset-flomoji-[✈️] text-base"></div>
+        <span className="ml-2 text-xl font-bold motion-preset-typewriter-[10]">
+          TravelEasy
+        </span>
       </Link>
 
       {/* Mobile Menu */}
@@ -39,15 +42,17 @@ const Header = () => {
         </SheetTrigger>
         <SheetContent side="left" className="w-[300px] sm:w-[400px]">
           <SheetHeader>
-            <SheetTitle className="text-left">
+            <SheetClose asChild>
               <Link to="/" className="flex items-center gap-2">
                 <Plane className="h-6 w-6" />
                 <span className="text-xl font-bold text-gray-800">
                   TravelEasy
                 </span>
               </Link>
-            </SheetTitle>
+            </SheetClose>
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
           </SheetHeader>
+
           <div className="mt-8 flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <h3 className="text-sm font-medium text-muted-foreground">

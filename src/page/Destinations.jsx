@@ -120,13 +120,15 @@ const DestinationsPage = () => {
       <div className="px-4 lg:px-6 h-16 top-0 w-full flex bg-transparent"></div>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">Explore Destinations</h1>
-          <p className="text-gray-600 mb-6">
+          <h1 className="text-4xl font-bold mb-4 intersect:motion-preset-rebound-up motion-delay-100">
+            Explore Destinations
+          </h1>
+          <p className="text-gray-600 mb-6 intersect:motion-preset-rebound-up motion-delay-300">
             Discover amazing places around the world and plan your next
             adventure
           </p>
 
-          <div className="grid gap-4 md:grid-cols-[1fr_200px_200px] items-end">
+          <div className="grid gap-4 md:grid-cols-[1fr_200px_200px] items-end intersect:motion-preset-rebound-up motion-delay-500">
             <Input
               placeholder="Search destinations..."
               value={searchQuery}
@@ -168,7 +170,10 @@ const DestinationsPage = () => {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredDestinations.map((destination) => (
-            <Card key={destination.id} className="overflow-hidden">
+            <Card
+              key={destination.id}
+              className="overflow-hidden intersect:motion-preset-rebound-up"
+            >
               <div className="relative">
                 <img
                   src={destination.image}

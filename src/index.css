@@ -88,3 +88,79 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes buildUp {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.motion-preset-flomoji-\[\2708\FE0F\] {
+  position: relative;
+}
+
+.motion-preset-flomoji-\[\2708\FE0F\]:before {
+  content: "✈️";
+  animation: emojiAnim 20000ms infinite cubic-bezier(0, 0.2, 0.2, 1) both;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.3);
+  width: 1.5rem /* 24px */;
+  height: 1.5rem /* 24px */;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 2px;
+  padding-bottom: 6px;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  @keyframes emojiAnim {
+    0% {
+      transform: (60deg);
+    }
+    30% {
+      transform: rotate(50deg);
+    }
+    40% {
+      transform: rotate(55deg);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    60% {
+      transform: rotate(40deg);
+    }
+    100% {
+      transform: translateX(5000%) rotate(45deg);
+    }
+  }
+}
+
+.motion-preset-typewriter-\[10\] {
+  --motion-duration: 5000ms;
+  --motion-typewriter-value: 10ch;
+  animation: typing var(--motion-duration) steps(10) var(--motion-loop-count),
+    blink 0.4s step-end infinite alternate;
+  white-space: nowrap;
+  border-right: 2px solid;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}

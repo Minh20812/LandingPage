@@ -37,15 +37,17 @@ const TravelLanding = () => {
             />
           </div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white p-4">
-            <h1 className="text-4xl font-bold mb-4 text-center">
+            <h1 className="text-4xl font-bold mb-4 text-center intersect:motion-opacity-in-0 intersect:motion-translate-y-in-100 intersect:motion-blur-in-md">
               Explore the World with TravelEasy
             </h1>
-            <p className="text-lg mb-8">Discover your next adventure with us</p>
-            <div className="flex gap-4">
+            <p className="text-lg mb-8 inline-block transform origin-bottom intersect:motion-safe:animate-buildUp">
+              Discover your next adventure with us
+            </p>
+            <div className="flex gap-4 intersect:motion-translate-x-in-50">
               <Link to="/destinations">
                 <Button
                   size="lg"
-                  className="bg-black text-white hover:bg-gray-800"
+                  className="bg-black text-white hover:bg-gray-800 intersect:motion-preset-pulse-sm"
                 >
                   Start Planning
                   <ChevronRight className="ml-2 h-4 w-4" />
@@ -54,7 +56,7 @@ const TravelLanding = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white bg-black text-white hover:bg-gray-800"
+                className="border-white bg-black text-white hover:bg-gray-800 "
               >
                 <Link to="/tours">View Packages</Link>
               </Button>
@@ -66,10 +68,10 @@ const TravelLanding = () => {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl intersect:motion-preset-slide-up motion-delay-100">
                   Popular Destinations
                 </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed intersect:motion-preset-slide-up motion-delay-300">
                   Explore our most sought-after destinations. From pristine
                   beaches to majestic mountains, find your perfect getaway.
                 </p>
@@ -102,7 +104,7 @@ const TravelLanding = () => {
                 <Card key={destination.title} className="overflow-hidden">
                   <img
                     alt={destination.title}
-                    className="object-cover w-full h-[200px]"
+                    className="object-cover w-full h-[200px] intersect:motion-preset-slide-up motion-opacity-in-0 hover:scale-110 transition-transform cursor-pointer"
                     height={200}
                     src={destination.image}
                     width={300}
@@ -125,7 +127,7 @@ const TravelLanding = () => {
         <section className="w-full py-12 md:py-24 lg:py-32 flex justify-center items-center">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center items-center space-y-4">
+              <div className="flex flex-col justify-center items-center space-y-4 intersect:motion-preset-rebound-right">
                 <div className="space-y-2 max-lg:text-center">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl ">
                     Why Choose TravelEasy
@@ -173,7 +175,7 @@ const TravelLanding = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center intersect:motion-preset-rebound-left">
                 <img
                   alt="Features"
                   className="overflow-hidden rounded-xl object-cover object-center"
@@ -190,10 +192,10 @@ const TravelLanding = () => {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl intersect:motion-preset-slide-up motion-delay-100">
                   What Our Travelers Say
                 </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed intersect:motion-preset-slide-up motion-delay-300">
                   Don't just take our word for it. Here's what our satisfied
                   travelers have to say about their experiences.
                 </p>
@@ -217,7 +219,10 @@ const TravelLanding = () => {
                   text: "The local experiences and accommodations exceeded our expectations. Highly recommend!",
                 },
               ].map((testimonial) => (
-                <Card key={testimonial.name} className="p-6">
+                <Card
+                  key={testimonial.name}
+                  className="p-6 intersect:motion-preset-rebound-up"
+                >
                   <CardContent className="space-y-4">
                     <div className="flex items-center space-x-1">
                       {[...Array(5)].map((_, i) => (
@@ -247,7 +252,7 @@ const TravelLanding = () => {
         <section className="w-full py-12 md:py-24 lg:py-32 border-t flex justify-center items-center">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center intersect:motion-preset-rebound-right">
                 <img
                   alt="Newsletter"
                   className="overflow-hidden rounded-xl object-cover object-center"
@@ -258,15 +263,15 @@ const TravelLanding = () => {
               </div>
               <div className="flex flex-col justify-center items-center max-lg:text-center space-y-4">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl intersect:motion-preset-rebound-up motion-delay-100">
                     Stay Updated
                   </h2>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed intersect:motion-preset-rebound-up motion-delay-300">
                     Subscribe to our newsletter for exclusive travel deals,
                     insider tips, and inspiration for your next adventure.
                   </p>
                 </div>
-                <div className="w-full max-w-sm space-y-2">
+                <div className="w-full max-w-sm space-y-2 intersect:motion-preset-rebound-up motion-delay-500">
                   <form className="flex space-x-2">
                     <Input
                       className="max-w-lg flex-1"
