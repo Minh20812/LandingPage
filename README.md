@@ -1,6 +1,9 @@
-# TravelEasy Landing Page
+# TravelEasy Landing Page (WIP)
 
 A modern, responsive landing page for TravelEasy - a travel booking platform built with React, Tailwind CSS, and Shadcn UI components.
+
+## Hình Ảnh Dự Án
+![Hình ảnh dự án](https://i.imgur.com/yhJxLDd.png)
 
 ## Features
 
@@ -40,10 +43,6 @@ A modern, responsive landing page for TravelEasy - a travel booking platform bui
    ```bash
    npm run dev
    ```
-
-## Hình Ảnh Dự Án
-![Hình ảnh dự án](https://i.imgur.com/yhJxLDd.png)
-
 
 ## Đóng Góp
 Nếu bạn muốn đóng góp cho dự án, vui lòng tạo một pull request với mô tả chi tiết về thay đổi bạn đã thực hiện.
